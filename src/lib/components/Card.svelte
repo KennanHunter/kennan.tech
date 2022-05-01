@@ -8,7 +8,7 @@
 		<h1>Kennan Hunter</h1>
 		<ul>
 			<li>High School Student</li>
-			<li><a href="/my-setup"> Linux User</a></li>
+			<!-- <li><a href="/my-setup"> Linux User</a></li> -->
 			<li><a href="/#resume"> Ameteur Developer</a></li>
 			<!-- <li><a href="/#blog"> </a></li> -->
 			<!-- <li></li> -->
