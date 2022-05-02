@@ -1,6 +1,11 @@
 @import "variables.scss";
 
+:root,
+html,
 body {
+	font-family: "Fira Code", monospace;
+	font-style: normal;
+	font-weight: 400;
 	background-color: $bg;
 	color: $text;
 	margin: 0;
