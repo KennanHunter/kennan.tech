@@ -2,12 +2,12 @@
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
 	import Line from "./Line.svelte";
-	let technology;
+	let technology: string;
 	let posts = [];
 
 	onMount(() => {
 		if ($page.url.hash) {
-			technology = $page.url.hash.split("#")[1];
+			technology = decodeURIComponent($page.url.hash.split("#")[1]);
 		}
 	});
 	$: if (technology) {
@@ -15,14 +15,14 @@
 			window.history.replaceState(
 				{},
 				"",
-				"/resume#" + technology.replace(" ", "_")
+				"/resume#" + encodeURIComponent(technology)
 			);
 		}
 	}
 
 	function selectTech(e) {
 		if (e.target.id) {
-			technology = (e.target.id as string).replace("_", " ");
+			technology = decodeURIComponent(e.target.id);
 		}
 	}
 </script>
@@ -42,7 +42,9 @@
 					<li id="Svelte">Svelte</li>
 				</ul>
 			</li>
-			<li id="Dynamic_Programming">Dynamic programming patterns</li>
+			<li id={encodeURIComponent("Dynamic Programming")}>
+				Dynamic programming patterns
+			</li>
 			<li id="Python">Python Scripting</li>
 		</ul>
 	</div>
