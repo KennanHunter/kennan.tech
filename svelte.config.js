@@ -11,6 +11,7 @@ const config = {
 		preprocess({}),
 		mdsvex({
 			extensions: [".md"],
+			layout: "./src/lib/components/MarkdownLayout.svelte",
 		}),
 	],
 
