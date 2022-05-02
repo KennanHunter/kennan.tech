@@ -1,10 +1,23 @@
 <script lang="ts">
-	import BlogCard from "./BlogCard.svelte";
+	import { page } from "$app/stores";
+	import { onMount } from "svelte";
 	import Line from "./Line.svelte";
 	let technology;
 	let posts = [];
 
+	onMount(() => {
+		if ($page.url.hash) {
+			technology = $page.url.hash.split("#")[1];
+		}
+	});
 	$: if (technology) {
+		if ($page.url.pathname === "/resume") {
+			window.history.replaceState(
+				{},
+				"",
+				"/resume#" + technology.replace(" ", "_")
+			);
+		}
 	}
 
 	function selectTech(e) {
@@ -27,11 +40,9 @@
 				Frontend Frameworks such as
 				<ul>
 					<li id="Svelte">Svelte</li>
-					<li />
-					<li />
 				</ul>
 			</li>
-			<li id={"Dynamic_Programming"}>Dynamic programming patterns</li>
+			<li id="Dynamic_Programming">Dynamic programming patterns</li>
 			<li id="Python">Python Scripting</li>
 		</ul>
 	</div>
