@@ -10,9 +10,12 @@
 			<td>Kennan#4955</td>
 		</tr>
 		<tr>
-			<td>Email</td>
-			<td>Kennanhunter@gmail.com</td>
+			<a href="mailto: kennanhunter5@gmail.com">
+				<td>Email</td>
+				<td>Kennanhunter@gmail.com</td>
+			</a>
 		</tr>
+
 		<tr>
 			<td>GitHub</td>
 			<td>KennanHunter</td>
@@ -23,5 +26,8 @@
 <style>
 	table {
 		width: 70%;
+	}
+	a {
+		all: unset;
 	}
 </style>
