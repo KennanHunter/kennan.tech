@@ -3,12 +3,9 @@
 </script>
 
 <nav>
-	<h1>Kennan Hunter</h1>
+	<a href="/"><h1>Kennan Hunter</h1></a>
 	<div>
 		<ul>
-			<a href="/">
-				<li>Index</li>
-			</a>
 			<a href="/resume/">
 				<li>Resume</li>
 			</a>
@@ -23,11 +20,6 @@
 			<a href="https://github.com/kennanhunter/kennan.tech">
 				<li>Github</li>
 			</a>
-			<!-- <a href="">
-				<li>a</li>
-			</a><a href="">
-				<li>a</li>
-			</a> -->
 		</ul>
 	</div>
 </nav>

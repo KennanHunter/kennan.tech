@@ -9,11 +9,14 @@
 			<td>Discord</td>
 			<td>Kennan#4955</td>
 		</tr>
+
 		<tr>
-			<a href="mailto: kennanhunter5@gmail.com">
-				<td>Email</td>
-				<td>Kennanhunter@gmail.com</td>
-			</a>
+			<td>Email</td>
+			<td>
+				<a href="mailto: kennanhunter5@gmail.com">
+					Kennanhunter@gmail.com
+				</a>
+			</td>
 		</tr>
 
 		<tr>
@@ -29,5 +32,8 @@
 	}
 	a {
 		all: unset;
+	}
+	a:hover {
+		font-weight: 900;
 	}
 </style>
