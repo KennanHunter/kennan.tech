@@ -12,5 +12,6 @@
 <style>
 	div {
 		margin: 0 1em;
+		height: 100%;
 	}
 </style>

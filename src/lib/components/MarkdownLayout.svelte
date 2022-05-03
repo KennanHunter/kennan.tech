@@ -1,12 +1,18 @@
 <script lang="ts">
 	import Center from "$lib/components/Center.svelte";
+	import Tag from "./Tag.svelte";
+	import Image from "svelte-image";
 	export let title;
 	export let date;
-	export let technologies: string[];
+	export let technologies;
+	export let image = "";
 </script>
 
 <article>
 	<Center>
+		{#if image}
+			<Image src={image} />
+		{/if}
 		<h1>{title}</h1>
 		{#if date}
 			<h3>Written: {date}</h3>
@@ -15,9 +21,7 @@
 			<h4>Technologies:</h4>
 			<ul>
 				{#each technologies as tech}
-					<a href={"/resume#" + encodeURIComponent(tech)}>
-						<li>{tech}</li>
-					</a>
+					<Tag technology={tech} />
 				{/each}
 			</ul>
 		{/if}
@@ -37,11 +41,5 @@
 	}
 	h4 {
 		margin: 0;
-	}
-	li {
-		margin: 0 1em;
-	}
-	a {
-		all: unset;
 	}
 </style>

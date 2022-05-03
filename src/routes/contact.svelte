@@ -1,0 +1,27 @@
+<script>
+	import CenterVertically from "$lib/components/CenterVertically.svelte";
+</script>
+
+<CenterVertically>
+	<h1>Contact me at</h1>
+	<table>
+		<tr>
+			<td>Discord</td>
+			<td>Kennan#4955</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>Kennanhunter@gmail.com</td>
+		</tr>
+		<tr>
+			<td>GitHub</td>
+			<td>KennanHunter</td>
+		</tr>
+	</table>
+</CenterVertically>
+
+<style>
+	table {
+		width: 70%;
+	}
+</style>

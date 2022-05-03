@@ -4,20 +4,32 @@
 
 <nav>
 	<h1>Kennan Hunter</h1>
-	<ul>
-		<a href="/">
-			<li>Index</li>
-		</a>
-		<a href="/resume/">
-			<li>Resume</li>
-		</a>
-		<a href="/blog/">
-			<li>Blog</li>
-		</a>
-		<a href="/links/">
-			<li>Links</li>
-		</a>
-	</ul>
+	<div>
+		<ul>
+			<a href="/">
+				<li>Index</li>
+			</a>
+			<a href="/resume/">
+				<li>Resume</li>
+			</a>
+			<a href="/blog/">
+				<li>Blog</li>
+			</a>
+			<a href="/contact/">
+				<li>Contact</li>
+			</a>
+		</ul>
+		<ul>
+			<a href="https://github.com/kennanhunter/kennan.tech">
+				<li>Github</li>
+			</a>
+			<!-- <a href="">
+				<li>a</li>
+			</a><a href="">
+				<li>a</li>
+			</a> -->
+		</ul>
+	</div>
 </nav>
 <Line />
 
@@ -28,6 +40,8 @@
 	}
 	nav {
 		padding: 0 1em;
+		display: flex;
+		align-items: center;
 	}
 	h1 {
 		display: inline-block;
@@ -46,5 +60,10 @@
 	}
 	li:hover {
 		background-color: variables.$purple;
+	}
+	div {
+		display: inline-flex;
+		justify-content: space-between;
+		flex-grow: 1;
 	}
 </style>
