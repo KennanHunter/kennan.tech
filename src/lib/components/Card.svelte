@@ -6,12 +6,9 @@
 	<div class="card">
 		<h1>Kennan Hunter</h1>
 		<ul>
-			<li>High School Student</li>
-			<!-- <li><a href="/my-setup"> Linux User</a></li> -->
-			<li><a href="/resume/">Amateur Developer</a></li>
-			<li><a href="/blog/">Blogger</a></li>
-			<!-- <li><a href="/#blog"> </a></li> -->
-			<!-- <li></li> -->
+			<li><a href="/resume/">My Resume</a></li>
+			<li><a href="/blog/">My Blog</a></li>
+			<!-- <li><a href="/contact/">Contact</a></li> -->
 		</ul>
 	</div>
 </div>
