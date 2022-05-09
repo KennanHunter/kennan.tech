@@ -1,18 +1,27 @@
-<!-- <script context="module">
+<script context="module">
 	/** @type {import('./blog/index.svelte').Load} */
 	export async function load({ fetch }) {
-        let postsRequest = await fetch()
+		let postsRequest;
+		await fetch("/blog/posts.json")
+			.then((response) => response.json())
+			.then((data) => {
+				postsRequest = data;
+			});
+
+		console.log(postsRequest);
 
 		return {
 			props: {
-				posts: "",
+				posts: postsRequest,
 			},
 		};
 	}
-</script> -->
+</script>
+
 <script>
+	import BlogCard from "$lib/components/BlogCard.svelte";
 	import Center from "$lib/components/Center.svelte";
-	// export let posts;
+	export let posts;
 </script>
 
 <Center>
@@ -21,4 +30,9 @@
 		Welcome to my blog, home of mediocre short to middle form tech writings
 		and tutorials
 	</p>
+
+	<h2>Posts</h2>
+	{#each posts as post}
+		<BlogCard {...post} />
+	{/each}
 </Center>
