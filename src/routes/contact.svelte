@@ -14,7 +14,7 @@
 			<td>Email</td>
 			<td>
 				<a href="mailto: kennanhunter5@gmail.com">
-					Kennanhunter@gmail.com
+					kennanhunter5@gmail.com
 				</a>
 			</td>
 		</tr>
