@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
+	import BlogCard from "./BlogCard.svelte";
+	import CenterVertically from "./CenterVertically.svelte";
 	import Line from "./Line.svelte";
+
+	export let posts = [];
+
 	let technology: string;
-	let posts = [];
+	let sortedPosts = [];
 
 	onMount(() => {
 		if ($page.url.hash) {
@@ -11,13 +16,23 @@
 		}
 	});
 	$: if (technology) {
-		if ($page.url.pathname === "/resume") {
+		if (
+			$page.url.pathname === "/resume" ||
+			$page.url.pathname === "/resume/"
+		) {
 			window.history.replaceState(
 				{},
 				"",
 				"/resume#" + encodeURIComponent(technology)
 			);
 		}
+
+		sortedPosts = posts.filter((value) => {
+			console.log(value);
+			return (value.technologies as Array<string>).find((value) => {
+				return value === technology;
+			});
+		});
 	}
 
 	function selectTech(e) {
@@ -58,8 +73,13 @@
 				Blog posts for {technology}
 			</h3>
 			<ul>
-				{#each posts as blog}
-					<!-- <BlogCard /> -->
+				{#each sortedPosts as post}
+					<BlogCard {...post} />
+				{:else}
+					<CenterVertically>
+						<h1>:(</h1>
+						<p>Doesn't look like theres any blog posts yet</p>
+					</CenterVertically>
 				{/each}
 			</ul>
 		{:else}
@@ -84,6 +104,9 @@
 			display: initial;
 			width: 100%;
 		}
+	}
+	ul {
+		list-style: square;
 	}
 	li {
 		margin: 0.4em 0;

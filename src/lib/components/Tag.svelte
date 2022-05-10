@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<a href={"/resume#" + encodeURIComponent(technology)}>
+	<a href={"/resume/#" + encodeURIComponent(technology)}>
 		{"#" + technology}
 	</a>
 </div>
@@ -14,7 +14,6 @@
 		all: unset;
 		margin: 0 0.7em;
 		color: variables.$yellow;
-		
 	}
 	div {
 		display: inline-block;

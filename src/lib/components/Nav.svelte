@@ -2,31 +2,37 @@
 	import Line from "./Line.svelte";
 </script>
 
-<nav>
-	<a href="/"><h1>Kennan Hunter</h1></a>
-	<div>
-		<ul>
-			<a href="/resume/">
-				<li>Resume</li>
-			</a>
-			<a href="/blog/">
-				<li>Blog</li>
-			</a>
-			<a href="/contact/">
-				<li>Contact</li>
-			</a>
-		</ul>
-		<ul>
-			<a href="https://github.com/kennanhunter/kennan.tech">
-				<li>Github</li>
-			</a>
-		</ul>
-	</div>
-</nav>
-<Line />
+<div class="wrap">
+	<nav>
+		<a href="/"><h1>Kennan Hunter</h1></a>
+		<div>
+			<ul>
+				<a href="/resume/">
+					<li>Resume</li>
+				</a>
+				<a href="/blog/">
+					<li>Blog</li>
+				</a>
+				<a href="/contact/">
+					<li>Contact</li>
+				</a>
+			</ul>
+			<ul>
+				<a href="https://github.com/kennanhunter/kennan.tech">
+					<li>Github</li>
+				</a>
+			</ul>
+		</div>
+	</nav>
+	<Line />
+</div>
 
 <style lang="scss">
 	@use "../styles/variables.scss";
+	.wrap {
+		display: inline-block;
+		width: 100%;
+	}
 	a {
 		all: unset;
 	}
