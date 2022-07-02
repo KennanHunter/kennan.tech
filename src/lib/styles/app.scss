@@ -10,3 +10,13 @@ body {
 	color: $text;
 	margin: 0;
 }
+
+strong {
+	font-weight: 900;
+	background-color: $yellow;
+	color: $bg;
+}
+
+a {
+	color: $blue;
+}

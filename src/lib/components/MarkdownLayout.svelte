@@ -1,12 +1,16 @@
 <script lang="ts">
 	import Center from "$lib/components/Center.svelte";
-	import Tag from "./Tag.svelte";
+	import "$lib/styles/syntax.scss";
+	import Giscus from "@giscus/svelte";
 	import Image from "svelte-image";
+	import Tag from "./Tag.svelte";
 	export let title;
 	export let date;
 	export let technologies;
 	export let image = "";
 </script>
+
+<svelte:head><title>{title}</title></svelte:head>
 
 <article>
 	<Center>
@@ -28,10 +32,24 @@
 		<div>
 			<slot />
 		</div>
+		<Giscus
+			repo="kennanhunter/kennan.tech"
+			repoId="MDEwOlJlcG9zaXRvcnkzMjk3MzA0MDc="
+			category="Announcements"
+			categoryId="DIC_kwDOE6dJZ84CP_sB"
+			mapping="title"
+			reactionsEnabled="1"
+			emitMetadata="0"
+			inputPosition="top"
+			theme="dark"
+			lang="en"
+			loading="lazy"
+		/>
 	</Center>
 </article>
 
-<style>
+<style lang="scss">
+	@import "../styles/variables.scss";
 	div {
 		max-width: 40em;
 		text-align: left;

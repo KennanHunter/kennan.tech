@@ -25,6 +25,8 @@
 		"eslint-plugin-svelte3": "^3.2.1",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
+		"rehype-autolink-headings": "^6.1.1",
+		"rehype-slug": "^5.0.1",
 		"sass": "^1.50.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
@@ -35,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@giscus/svelte": "^2.0.6",
 		"mdsvex": "^0.10.5"
 	}
 }
