@@ -36,8 +36,22 @@
 	}
 
 	function selectTech(e) {
-		if (e.target.id) {
-			technology = decodeURIComponent(e.target.id);
+		if (e.target) {
+			let res = selectTechFromElement(e.target);
+			if (res) {
+				technology = decodeURIComponent(res);
+			}
+		}
+	}
+	function selectTechFromElement(e: HTMLElement, iteration = 0): string {
+		if (e.id && e.classList.contains("tech")) {
+			return e.id;
+		} else {
+			if (iteration < 5) {
+				return selectTechFromElement(e.parentElement, iteration + 1);
+			} else {
+				return undefined;
+			}
 		}
 	}
 </script>
@@ -46,21 +60,38 @@
 	<div>
 		<h3>Student level experience with</h3>
 		<ul on:click={selectTech}>
-			<li id="Javascript">
+			<li id="Javascript" class="tech">
 				Javascript/Typescript on browsers and NodeJS
 			</li>
-			<li id="GraphQL">GraphQL</li>
-			<li id="API">Backend Api Development</li>
-			<li id="Frontend">
+			<li id="Java" class="tech">Java</li>
+			<li id="GraphQL" class="tech">GraphQL</li>
+			<li id="API" class="tech">Backend Api Development</li>
+			<li id="Frontend" class="tech">
 				Frontend Frameworks such as
 				<ul>
-					<li id="Svelte">Svelte</li>
+					<li id="Svelte" class="tech">Svelte</li>
 				</ul>
 			</li>
-			<li id={encodeURIComponent("Dynamic Programming")}>
+			<li id={encodeURIComponent("Dynamic Programming")} class="tech">
 				Dynamic programming patterns
 			</li>
-			<li id="Python">Python Scripting</li>
+			<li id="Python" class="tech">Python Scripting</li>
+		</ul>
+		<h3>Accolades</h3>
+		<ul on:click={selectTech}>
+			<li id="TSA" class="tech">
+				1st place for Rhode Island, Massachusets, and Conneticut for
+				Technology Student Association Compsci 2022
+			</li>
+			<li id={encodeURIComponent("First Tech Challenge")} class="tech">
+				<h4>First Tech Challenge</h4>
+				<ul>
+					<li>
+						Programmer for Rhode Island Winning Alliance Captain and
+						Inspire Award (1st and 2nd Place) 2021
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 	<!-- Only visable if small screen -->
@@ -72,7 +103,7 @@
 			<h3>
 				Blog posts for {technology}
 			</h3>
-			<ul>
+			<ul class="no-pad">
 				{#each sortedPosts as post}
 					<BlogCard {...post} />
 				{:else}
@@ -88,10 +119,16 @@
 	</div>
 </section>
 
-<style>
+<style lang="scss">
+	.no-pad {
+		padding: 0;
+	}
 	section {
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: 50% auto;
+	}
+	li > p {
+		padding-left: 2em;
 	}
 	.line {
 		display: none;
