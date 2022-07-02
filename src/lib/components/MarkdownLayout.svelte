@@ -51,7 +51,7 @@
 <style lang="scss">
 	@import "../styles/variables.scss";
 	div {
-		max-width: 40em;
+		max-width: 45em;
 		text-align: left;
 	}
 	ul {
