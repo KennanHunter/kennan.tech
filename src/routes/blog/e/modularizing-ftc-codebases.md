@@ -87,6 +87,7 @@ At this point you should have a file that looks like this.
 package org.firstinspires.ftc.teamcode.subsystem;
 
 public class Drive {}
+
 ```
 
 Now we're going to start describing our hardware. Much like in a standard OpMode we can create a few variables for our motors. Because this is the drive subsystem, we only want to describe the hardware that is directly related to driving.
@@ -101,6 +102,7 @@ public class Drive {
 	public DcMotor rightRear;
 	public DcMotor rightFront;
 }
+
 ```
 
 At this point you might be itching to add a `runOpMode` or `init` method like you would in an OpMode. However this is a custom class, not an op mode, meaning we dont have those methods for use. Instead, lets use a class constructor.
