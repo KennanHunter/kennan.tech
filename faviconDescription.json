@@ -1,0 +1,69 @@
+{
+	"masterPicture": "static/favicon.svg",
+	"iconsPath": "%sveltekit.assets%",
+	"design": {
+		"ios": {
+			"pictureAspect": "backgroundAndMargin",
+			"backgroundColor": "#282828",
+			"margin": "25%",
+			"assets": {
+				"ios6AndPriorIcons": false,
+				"ios7AndLaterIcons": false,
+				"precomposedIcons": false,
+				"declareOnlyDefaultIcon": true
+			}
+		},
+		"desktopBrowser": {
+			"design": "background",
+			"backgroundColor": "#282828",
+			"backgroundRadius": 0.65,
+			"imageScale": 0.8
+		},
+		"windows": {
+			"pictureAspect": "noChange",
+			"backgroundColor": "#282828",
+			"onConflict": "override",
+			"assets": {
+				"windows80Ie10Tile": false,
+				"windows10Ie11EdgeTiles": {
+					"small": false,
+					"medium": true,
+					"big": false,
+					"rectangle": false
+				}
+			}
+		},
+		"androidChrome": {
+			"pictureAspect": "backgroundAndMargin",
+			"margin": "15%",
+			"backgroundColor": "#282828",
+			"themeColor": "#282828",
+			"manifest": {
+				"display": "standalone",
+				"orientation": "notSet",
+				"onConflict": "override",
+				"declared": true
+			},
+			"assets": {
+				"legacyIcon": false,
+				"lowResolutionIcons": false
+			}
+		},
+		"safariPinnedTab": {
+			"pictureAspect": "blackAndWhite",
+			"threshold": 28.125,
+			"themeColor": "#d3869b"
+		}
+	},
+	"settings": {
+		"scalingAlgorithm": "Mitchell",
+		"errorOnImageTooSmall": false,
+		"readmeFile": false,
+		"htmlCodeFile": true,
+		"usePathAsIs": false
+	},
+	"versioning": {
+		"paramName": "v",
+		"paramValue": "2"
+	}
+}
