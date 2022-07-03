@@ -139,7 +139,8 @@ public class Drive {
 	public DcMotor rightFront;
 
 	public Drive() {
-		leftFront = hardwareMap.get(DcMotor.class, "leftFront"); // This doesn't work
+		//! This doesn't work
+		leftFront = hardwareMap.get(DcMotor.class, "leftFront");
 	}
 }
 
@@ -260,7 +261,8 @@ public class SubsystemExample extends LinearOpMode {
 Add the subsystem variable, much like you would do a motor. In your `runOpMode()` method create the drive subsystem. This takes the place of your `hardwareMap.get()` call. After your `waitForStart()`, we actually start the Autonomous. Finally we can put our `foward()` method call.
 
 ```java
-import org.firstinspires.ftc.teamcode.subsystem.Drive; // Android Studio should do this automatically
+// Android Studio should do this import automatically
+import org.firstinspires.ftc.teamcode.subsystem.Drive;
 
 @Autonomous(name = "Subsystems r c00l")
 public class SubsystemExample extends LinearOpMode {
