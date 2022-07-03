@@ -77,6 +77,7 @@
 			justify-content: center;
 			ul {
 				flex-wrap: wrap;
+				margin: 0;
 			}
 		}
 	}
