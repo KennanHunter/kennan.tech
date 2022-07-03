@@ -8,12 +8,13 @@
 	export let title;
 	export let date;
 	export let technologies;
+	export let description = "";
 	export let image = "";
 </script>
 
 <svelte:head><title>{title}</title></svelte:head>
 
-<Seo {title} {technologies} />
+<Seo {title} {technologies} {description} />
 <article>
 	<Center>
 		{#if image}

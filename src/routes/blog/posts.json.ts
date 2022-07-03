@@ -4,6 +4,7 @@ interface Post {
 	technologies: string[];
 	publishedAt: string;
 	url: string;
+	description?: string;
 }
 
 /** @type {import('./blog/posts.json.ts').RequestHandler} */
