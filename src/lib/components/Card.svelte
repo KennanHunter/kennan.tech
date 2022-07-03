@@ -2,6 +2,10 @@
 	import "$lib/styles/variables.scss";
 </script>
 
+<svelte:head>
+	<meta name="description" content="Kennan Hunters Personal Webpage/Resume" />
+</svelte:head>
+
 <div class="initial-view">
 	<div class="card">
 		<h1>Kennan Hunter</h1>

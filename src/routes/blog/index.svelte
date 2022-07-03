@@ -19,9 +19,11 @@
 <script>
 	import BlogCard from "$lib/components/BlogCard.svelte";
 	import Center from "$lib/components/Center.svelte";
+	import Seo from "$lib/components/SEO.svelte";
 	export let posts;
 </script>
 
+<Seo title="Blog" description="Kennan Hunter's Tech Blog" keywords={["Blog"]} />
 <Center>
 	<h1>My Blog</h1>
 	<p>

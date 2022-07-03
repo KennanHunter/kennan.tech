@@ -1,6 +1,9 @@
 <script>
 	import CenterVertically from "$lib/components/CenterVertically.svelte";
+	import Seo from "$lib/components/SEO.svelte";
 </script>
+
+<Seo title="Contact" description="Contact Kennan Hunter" />
 
 <CenterVertically>
 	<h1>Contact me at</h1>

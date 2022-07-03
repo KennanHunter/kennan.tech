@@ -18,7 +18,13 @@
 
 <script>
 	import Resume from "$lib/components/Resume.svelte";
+	import Seo from "$lib/components/SEO.svelte";
 	export let posts;
 </script>
 
+<Seo
+	title="Interactive Resume"
+	description="Kennan Hunter's Interactive Resume"
+	keywords={["Resume", "Interactive"]}
+/>
 <Resume {posts} />
