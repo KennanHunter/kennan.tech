@@ -64,6 +64,7 @@
 	}
 	ul {
 		display: flex;
+		flex-wrap: wrap;
 	}
 	h4 {
 		margin: 0;
