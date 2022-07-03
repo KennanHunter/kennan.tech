@@ -17,7 +17,7 @@
 					<li>Contact</li>
 				</a>
 			</ul>
-			<ul>
+			<ul class="github">
 				<a href="https://github.com/kennanhunter/kennan.tech">
 					<li>Github</li>
 				</a>
@@ -76,9 +76,14 @@
 		div {
 			justify-content: center;
 			ul {
-				flex-wrap: wrap;
 				margin: 0;
+				flex-shrink: 1;
 			}
+		}
+	}
+	@media only screen and (max-width: 300px) {
+		.github {
+			display: none;
 		}
 	}
 </style>

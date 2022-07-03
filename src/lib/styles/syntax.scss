@@ -1,13 +1,10 @@
-/**
-* xonokai theme for JavaScript, CSS and HTML
-* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
-* license: MIT; http://moox.mit-license.org/
-*/
+@use "variables.scss";
+
 code[class*="language-"],
 pre[class*="language-"] {
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
-	tab-size: 2;
+	tab-size: 4;
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
@@ -15,25 +12,19 @@ pre[class*="language-"] {
 	white-space: pre;
 	white-space: pre-wrap;
 	word-wrap: normal;
-	font-family: Menlo, Monaco, "Courier New", monospace;
-	font-size: 14px;
-	color: #76d9e6;
+	font-family: "Fira Code", monospace;
 	text-shadow: none;
+	color: variables.$text;
 }
 
 pre > code[class*="language-"] {
 	font-size: 1em;
 }
 
-pre[class*="language-"],
-:not(pre) > code[class*="language-"] {
-	background: #2a2a2a;
-}
-
 pre[class*="language-"] {
 	padding: 15px;
 	border-radius: 4px;
-	border: 1px solid #e1e1e8;
+	border: 1px solid variables.$text;
 	overflow: auto;
 	position: relative;
 	code {
@@ -49,38 +40,46 @@ pre[class*="language-"] {
 	box-shadow: 1px 1px 0.3em -0.1em #000 inset;
 }
 
-.token.namespace {
-	opacity: 0.7;
+.token.annotation {
+	color: variables.$purple !important;
+}
+
+.token.function {
+	color: variables.$green2;
+}
+
+.token.class-name {
+	color: variables.$green2;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #6f705e;
+	color: variables.$grey;
 }
 
 .token.operator,
 .token.boolean,
 .token.number {
-	color: #a77afe;
+	color: variables.$blue;
 }
 
 .token.attr-name,
 .token.string {
-	color: #e6d06c;
+	color: variables.$yellow2;
 }
 
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #e6d06c;
+	color: variables.$yellow;
 }
 
 .token.selector,
 .token.inserted {
-	color: #a6e22d;
+	color: variables.$aqua2;
 }
 
 .token.atrule,
@@ -88,12 +87,12 @@ pre[class*="language-"] {
 .token.keyword,
 .token.important,
 .token.deleted {
-	color: #ef3b7d;
+	color: variables.$red2;
 }
 
 .token.regex,
 .token.statement {
-	color: #76d9e6;
+	color: variables.$blue;
 }
 
 .token.placeholder,
@@ -108,7 +107,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-	color: #bebec5;
+	color: variables.$grey;
 }
 
 .token.entity {
