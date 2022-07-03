@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="110.15577"
+       y="34.165963"
+       width="132.91465"
+       height="229.49177"
+       id="rect8731" />
+    <rect
+       x="2.7684233"
+       y="2.1955878"
+       width="387.06223"
+       height="282.19806"
+       id="rect8723" />
+    <rect
+       x="68.391376"
+       y="112.63012"
+       width="354.4978"
+       height="355.94231"
+       id="rect63" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="display:inline;fill:#282828;fill-opacity:1;stroke-width:1.0006"
+       id="rect6225"
+       width="512"
+       height="512"
+       x="0"
+       y="0" />
+    <text
+       xml:space="preserve"
+       id="text8729"
+       style="font-style:normal;font-weight:normal;font-size:192px;line-height:0.95;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8731);fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(3.2974821,0,0,3.2974838,-323.95893,-112.75169)"><tspan
+         x="110.15625"
+         y="180.06205"
+         id="tspan14950"><tspan
+           style="font-weight:bold;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Bold';fill:#b16286"
+           id="tspan14948">K</tspan></tspan></text>
+  </g>
+</svg>
