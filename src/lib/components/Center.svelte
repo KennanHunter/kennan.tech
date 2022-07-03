@@ -17,6 +17,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* width: 300px; */
+	}
+
+	@media only screen and (max-width: 800px) {
+		.container {
+			grid-template-columns: 100%;
+		}
+		.element {
+			grid-column-start: 1;
+		}
 	}
 </style>

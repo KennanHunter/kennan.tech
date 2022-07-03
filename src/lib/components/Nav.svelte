@@ -64,4 +64,20 @@
 		justify-content: space-between;
 		flex-grow: 1;
 	}
+	@media only screen and (max-width: 500px) {
+		h1 {
+			text-align: center;
+			margin-top: 1em;
+		}
+		nav {
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		div {
+			justify-content: center;
+			ul {
+				flex-wrap: wrap;
+			}
+		}
+	}
 </style>

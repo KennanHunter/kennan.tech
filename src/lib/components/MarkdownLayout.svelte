@@ -54,6 +54,11 @@
 		max-width: 45em;
 		text-align: left;
 	}
+	@media only screen and (max-width: 800px) {
+		div {
+			max-width: 100%;
+		}
+	}
 	ul {
 		display: flex;
 	}

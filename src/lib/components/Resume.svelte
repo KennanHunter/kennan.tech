@@ -28,7 +28,6 @@
 		}
 
 		sortedPosts = posts.filter((value) => {
-			console.log(value);
 			return (value.technologies as Array<string>).find((value) => {
 				return value === technology;
 			});

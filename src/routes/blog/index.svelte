@@ -8,8 +8,6 @@
 				postsRequest = data;
 			});
 
-		console.log(postsRequest);
-
 		return {
 			props: {
 				posts: postsRequest,
