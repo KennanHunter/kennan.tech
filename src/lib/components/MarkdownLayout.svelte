@@ -3,6 +3,7 @@
 	import "$lib/styles/syntax.scss";
 	import Giscus from "@giscus/svelte";
 	import Image from "svelte-image";
+	import Seo from "./SEO.svelte";
 	import Tag from "./Tag.svelte";
 	export let title;
 	export let date;
@@ -12,6 +13,7 @@
 
 <svelte:head><title>{title}</title></svelte:head>
 
+<Seo {title} {technologies} />
 <article>
 	<Center>
 		{#if image}
