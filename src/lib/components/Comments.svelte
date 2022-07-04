@@ -4,14 +4,21 @@
 	import Line from "./Line.svelte";
 
 	let successful = true;
-	onMount(() => {
-		fetch("https://api.github.com/api/")
+
+	async function fetchGithub() {
+		return await fetch("https://api.github.com/api/")
 			.then(() => {
 				successful = true;
 			})
 			.catch(() => {
 				successful = false;
+				setTimeout(async () => {
+					await fetchGithub();
+				}, 5000);
 			});
+	}
+	onMount(() => {
+		fetchGithub();
 	});
 </script>
 
