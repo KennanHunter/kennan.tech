@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Center from "$lib/components/Center.svelte";
+	import Comments from "$lib/components/Comments.svelte";
+	import Seo from "$lib/components/SEO.svelte";
+	import Tag from "$lib/components/Tag.svelte";
 	import "$lib/styles/syntax.scss";
-	import Giscus from "@giscus/svelte";
 	import Image from "svelte-image";
-	import Seo from "./SEO.svelte";
-	import Tag from "./Tag.svelte";
+
 	export let title;
 	export let date;
 	export let technologies;
@@ -35,19 +36,7 @@
 		<div>
 			<slot />
 		</div>
-		<Giscus
-			repo="kennanhunter/kennan.tech"
-			repoId="MDEwOlJlcG9zaXRvcnkzMjk3MzA0MDc="
-			category="Announcements"
-			categoryId="DIC_kwDOE6dJZ84CP_sB"
-			mapping="title"
-			reactionsEnabled="1"
-			emitMetadata="0"
-			inputPosition="top"
-			theme="dark"
-			lang="en"
-			loading="lazy"
-		/>
+		<Comments />
 	</Center>
 </article>
 
