@@ -5,7 +5,7 @@ technologies:
     - Java
     - First Tech Challenge
     - Robotics
-description: Subsystems are a great way to de-spaghettify your FTC codebase.
+description: Learn how to use Subsystems to de-spaghettify your FTC codebase.
 publishedAt: 2022-07-02
 ---
 
