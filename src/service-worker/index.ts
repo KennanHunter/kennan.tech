@@ -5,7 +5,6 @@ import { build, files, prerendered, version } from "$service-worker";
 const worker = self as unknown as ServiceWorkerGlobalScope;
 
 const STATIC_CACHE_NAME = `cache${version}`;
-const APP_CACHE_NAME = `offline${version}`;
 
 const toCache = [
 	...files
@@ -24,10 +23,9 @@ worker.addEventListener("install", (event) => {
 	event.waitUntil(
 		caches
 			.open(STATIC_CACHE_NAME)
-			.then((cache) => {
-				return cache.addAll(toCache).then(() => {
-					console.log("Initial static cache completed");
-				});
+			.then(async (cache) => {
+				await cache.addAll(toCache);
+				console.log("Initial static cache completed");
 			})
 			.then(() => {
 				worker.skipWaiting();
@@ -41,7 +39,7 @@ worker.addEventListener("activate", (event) => {
 		caches.keys().then(async (keys) => {
 			// delete old caches
 			for (const key of keys) {
-				if (key !== STATIC_CACHE_NAME && key !== APP_CACHE_NAME) {
+				if (key !== STATIC_CACHE_NAME) {
 					await caches.delete(key);
 				}
 			}
@@ -56,20 +54,20 @@ worker.addEventListener("activate", (event) => {
  * Fall back to the cache if the user is offline.
  */
 async function fetchAndCache(request: Request) {
-	const cache = await caches.open(APP_CACHE_NAME);
+	const cache = await caches.open(STATIC_CACHE_NAME);
 
 	try {
 		const response = await fetch(request).catch((e) => {
 			console.log(e + request.url);
 			throw e;
 		});
-		cache.put(request.url, response.clone());
+		cache.put(request, response.clone());
 		console.log("Caching: " + request.url);
 		return response;
 	} catch (err) {
-		const response = await cache.match(request.url);
+		const response = await cache.match(request);
 		if (response) {
-			console.log("Fetching from Cache: " + request.url);
+			console.log("Fetching from Cache: " + request);
 			return response;
 		}
 
@@ -91,18 +89,14 @@ worker.addEventListener("fetch", (event) => {
 	const isDevServerRequest =
 		url.hostname === self.location.hostname &&
 		url.port !== self.location.port;
-	const isStaticAsset = staticAssets.has(url.href);
-	const skipBecauseUncached =
-		event.request.cache === "only-if-cached" && !isStaticAsset;
 
-	if (isHttp && !isDevServerRequest && !skipBecauseUncached) {
+	if (isHttp && !isDevServerRequest) {
 		event.respondWith(
 			(async () => {
 				// always serve static files and bundler-generated assets from cache.
 				// if your application has other URLs with data that will never change,
 				// set this variable to true for them, and they will only be fetched once.
-				const cachedAsset =
-					isStaticAsset && (await caches.match(event.request));
+				const cachedAsset = await caches.match(event.request);
 
 				return cachedAsset || fetchAndCache(event.request);
 			})()
