@@ -1,5 +1,5 @@
 <script>
-	import Card3d from "$lib/components/Card3d.svelte";
+	import Card from "$lib/components/Card.svelte";
 
 	import Seo from "$lib/components/SEO.svelte";
 
@@ -7,4 +7,4 @@
 </script>
 
 <Seo />
-<Card3d />
+<Card />
