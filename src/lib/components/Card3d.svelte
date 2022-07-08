@@ -2,14 +2,15 @@
 	import { onMount } from "svelte";
 
 	import {
-		Scene,
-		PerspectiveCamera,
-		WebGLRenderer,
-		BoxGeometry,
-		MeshBasicMaterial,
-		Mesh,
 		AmbientLight,
+		BoxGeometry,
+		Mesh,
+		MeshBasicMaterial,
+		PerspectiveCamera,
+		Scene,
+		WebGLRenderer,
 	} from "three";
+	import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 	let innerHeight, innerWidth;
 	let el;
@@ -33,8 +34,10 @@
 		const cube = new Mesh(geometry, material);
 		scene.add(cube);
 		camera.position.z = 5;
+		const controls = new OrbitControls(camera, renderer.domElement);
 
 		function animate() {
+			controls.update();
 			renderer.render(scene, camera);
 			requestAnimationFrame(animate);
 		}
