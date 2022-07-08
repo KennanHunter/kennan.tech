@@ -8,6 +8,7 @@
 		BoxGeometry,
 		MeshBasicMaterial,
 		Mesh,
+		AmbientLight,
 	} from "three";
 
 	let innerHeight, innerWidth;
@@ -27,6 +28,8 @@
 
 		const geometry = new BoxGeometry(1, 1, 1);
 		const material = new MeshBasicMaterial({ color: 0x00ff00 });
+		const light = new AmbientLight(0x404040);
+		scene.add(light);
 		const cube = new Mesh(geometry, material);
 		scene.add(cube);
 		camera.position.z = 5;
