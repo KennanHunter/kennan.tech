@@ -10,7 +10,7 @@
 		Scene,
 		WebGLRenderer,
 	} from "three";
-	import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+	import { OrbitControls } from "three/examples/js/controls/OrbitControls";
 
 	let innerHeight, innerWidth;
 	let el;
@@ -35,6 +35,7 @@
 		scene.add(cube);
 		camera.position.z = 5;
 		const controls = new OrbitControls(camera, renderer.domElement);
+		controls.autoRotate = true;
 
 		function animate() {
 			controls.update();
