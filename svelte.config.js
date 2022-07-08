@@ -20,8 +20,11 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ out: "build" }),
 		prerender: { default: true },
+		alias: {
+			$threejsm: "node_modules/three/examples/jsm",
+		},
 	},
 };
 

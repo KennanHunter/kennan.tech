@@ -10,7 +10,7 @@
 		Scene,
 		WebGLRenderer,
 	} from "three";
-	import { OrbitControls } from "three/examples/js/controls/OrbitControls";
+	import { OrbitControls } from "$threejsm/controls/OrbitControls";
 
 	let innerHeight, innerWidth;
 	let el;
