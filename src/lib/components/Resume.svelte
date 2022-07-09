@@ -63,18 +63,19 @@
 				Javascript/Typescript on browsers and NodeJS
 			</li>
 			<li id="Java" class="tech">Java</li>
-			<li id="GraphQL" class="tech">GraphQL</li>
-			<li id="API" class="tech">Backend Api Development</li>
+			<li id="Python" class="tech">Python Scripting and Development</li>
 			<li id="Frontend" class="tech">
-				Frontend Frameworks such as
+				Frontend Javascript Frameworks such as
 				<ul>
+					<li id="React" class="tech">React</li>
 					<li id="Svelte" class="tech">Svelte</li>
 				</ul>
 			</li>
+			<li id="GraphQL" class="tech">GraphQL</li>
+			<li id="Rest" class="tech">Rest Apis</li>
 			<li id={encodeURIComponent("Dynamic Programming")} class="tech">
-				Dynamic programming patterns
+				Dynamic Programming
 			</li>
-			<li id="Python" class="tech">Python Scripting</li>
 		</ul>
 		<h3>Accolades</h3>
 		<ul on:click={selectTech}>
