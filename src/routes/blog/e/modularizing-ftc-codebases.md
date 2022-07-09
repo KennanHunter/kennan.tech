@@ -5,7 +5,7 @@ technologies:
     - Java
     - First Tech Challenge
     - Robotics
-description: Learn how to use Subsystems to de-spaghettify your FTC codebase.
+description: Learn how to use Subsystems to de-spaghetti your FTC codebase.
 publishedAt: 2022-07-02
 ---
 
@@ -19,7 +19,7 @@ Looking at the source code for my 2020-2021 team, there are roughly 17 OpModes. 
 `hardwareMap.get()`
 calls.
 
-This sort of project architecture while simple, shows its problems as the season goes on, and you find yourself dealing with hundreads of lines of gibberish. **Finding what you want to edit becomes as difficult of a challenge as editing it.**
+This sort of project architecture while simple, shows its problems as the season goes on, and you find yourself dealing with hundred of lines of gibberish. **Finding what you want to edit becomes as difficult of a challenge as editing it.**
 
 # Options
 
@@ -38,14 +38,14 @@ class FunctionExample extends LinearOpMode {
 		motor =
 			hardwareMap.get(
 				DcMotor.class,
-				"Have fun syncronizing this string across 10 op modes"
+				"Have fun synchronizing this string across 10 op modes"
 			);
 
 		waitForStart();
-		foward();
+		forward();
 	}
 
-	private void foward() {
+	private void forward() {
 		motor.setPower(1.0);
 	}
 }
@@ -55,12 +55,12 @@ class FunctionExample extends LinearOpMode {
 Functions (or more accurately teleop methods) can be a great first step to reusable code, and I highly recommend them to any programmers I'm introducing to FTC, but they fall flat on a few points.
 
 -   They must live in the same file as the OpMode that is using them
--   They leave hardware allocation to whatever OpMode they accompany introducing "Magic Strings" which need to be manually syncronized for every OpMode
+-   They leave hardware allocation to whatever OpMode they accompany introducing "Magic Strings" which need to be manually synchronized for every OpMode
 
 2. ### Finite State Machines
 
 Finite State Machines are arguably the most elegant way to describe an ftc robot, but for most use cases, they are overcomplicated.
-Finite State Machines shine when you need to apply complex logic/algorithms (such as PID or Feedfoward) to whatever hardware they encapsulate.
+Finite State Machines shine when you need to apply complex logic/algorithms (such as PID or Feed-Forward) to whatever hardware they encapsulate.
 
 [Game Manual 0 has a great article on Finite State Machines.](https://gm0.org/en/latest/docs/software/finite-state-machines.html)
 
@@ -72,11 +72,11 @@ This tutorial is going to cover the use of Subsystems due to the various benefit
 
 -   Subsystems live in their own file, and are easy to use in other OpModes, ensuring that hardware changes don't break existing code
 -   Subsystems methods (functions) live with their hardware definitions
--   `Hardwaremap.get()` calls for each peice of hardware exist in one spot, ensuring that you only have to worry about updating one string when you update your Control Hub's hardware map
+-   `Hardwaremap.get()` calls for each piece of hardware exist in one spot, ensuring that you only have to worry about updating one string when you update your Control Hub's hardware map
 
 # Creating a simple hardware based Subsystem
 
-Lets start by making a new folder for your subsystems. Despite how simple this sounds, many FTC programmers deside to throw everything at the top of their `TeamCode` folder, making their code harder to read and understand.
+Lets start by making a new folder for your subsystems. Despite how simple this sounds, many FTC programmers decide to throw everything at the top of their `TeamCode` folder, making their code harder to read and understand.
 
 Go into your TeamCode folder and right click on it. Then go `New > Package`. When the dialogue pops up type `subsystem`.
 
@@ -106,7 +106,7 @@ public class Drive {
 
 ```
 
-At this point you might be itching to add a `runOpMode` or `init` method like you would in an OpMode. However this is a custom class, not an op mode, meaning we dont have those methods for use. Instead, lets use a class constructor.
+At this point you might be itching to add a `runOpMode` or `init` method like you would in an OpMode. However this is a custom class, not an op mode, meaning we don't have those methods for use. Instead, lets use a class constructor.
 
 A class constructor is a method that gets called when a class is initially created.
 
@@ -207,7 +207,7 @@ public class Drive {
 		// ...
 	}
 
-	public void Foward(double power) {
+	public void Forward(double power) {
 		leftFront.setPower(power);
 		leftRear.setPower(power);
 		rightFront.setPower(power);
@@ -217,7 +217,7 @@ public class Drive {
 
 ```
 
-In our `Foward` method we pass in a double named "power" which determines the power of our motor.
+In our `Forward` method we pass in a double named "power" which determines the power of our motor.
 
 # Configuration Variables
 
@@ -230,7 +230,7 @@ public class Drive {
 
 	//...
 
-	public void Foward(double p) {
+	public void Forward(double p) {
 		double power = p * MAX_SPEED
 		leftFront.setPower(power);
 		leftRear.setPower(power);
@@ -258,7 +258,7 @@ public class SubsystemExample extends LinearOpMode {
 
 ```
 
-Add the subsystem variable, much like you would do a motor. In your `runOpMode()` method create the drive subsystem. This takes the place of your `hardwareMap.get()` call. After your `waitForStart()`, we actually start the Autonomous. Finally we can put our `foward()` method call.
+Add the subsystem variable, much like you would do a motor. In your `runOpMode()` method create the drive subsystem. This takes the place of your `hardwareMap.get()` call. After your `waitForStart()`, we actually start the Autonomous. Finally we can put our `forward()` method call.
 
 ```java
 // Android Studio should do this import automatically
@@ -273,7 +273,7 @@ public class SubsystemExample extends LinearOpMode {
 	public void runOpMode() {
 		drive = new Drive(hardwareMap);
 		waitForStart();
-		drive.foward(1.0)
+		drive.forward(1.0)
 	}
 }
 

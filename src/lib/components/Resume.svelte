@@ -80,7 +80,7 @@
 		<h3>Accolades</h3>
 		<ul on:click={selectTech}>
 			<li id="TSA" class="tech">
-				1st place for Rhode Island, Massachusets, and Conneticut for
+				1st place for Rhode Island, Massachusets, and Connecticut for
 				Technology Student Association Compsci 2022
 			</li>
 			<li id={encodeURIComponent("First Tech Challenge")} class="tech">
@@ -94,7 +94,7 @@
 			</li>
 		</ul>
 	</div>
-	<!-- Only visable if small screen -->
+	<!-- Only visible if small screen -->
 	<div class="line">
 		<Line />
 	</div>

@@ -14,7 +14,8 @@
 		"package": "svelte-kit package",
 		"prepare": "svelte-kit sync && husky install",
 		"preview": "vite preview",
-		"test": "playwright test"
+		"test": "playwright test",
+		"spell": "cspell \"src/**/*\" \"./*\" --fail-fast true"
 	},
 	"dependencies": {
 		"@fontsource/fira-code": "^4.5.10",
@@ -32,6 +33,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.30.5",
 		"@typescript-eslint/parser": "^5.30.5",
 		"cli-real-favicon": "^0.0.8",
+		"cspell": "^6.2.3",
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
