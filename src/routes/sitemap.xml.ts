@@ -22,8 +22,9 @@ export async function get({}: RequestEvent): Promise<RequestHandlerOutput> {
 			arr = arr.filter((val: string) => {
 				return !val.includes("__");
 			});
-			return arr.map((path) => {
-				return `<url>
+			return arr
+				.map((path) => {
+					return `<url>
 						<loc>
 					${("https://kennan.tech" + path).replace(/[<>&'"]/g, (c) => {
 						switch (c) {
@@ -40,7 +41,8 @@ export async function get({}: RequestEvent): Promise<RequestHandlerOutput> {
 						}
 					})}</loc>
 				</url>`;
-			});
+				})
+				.join("");
 		})()}
 		</urlset>`
 			.replace(/>\s*/g, ">")
