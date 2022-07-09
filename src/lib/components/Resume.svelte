@@ -127,9 +127,6 @@
 		display: grid;
 		grid-template-columns: 50% auto;
 	}
-	li > p {
-		padding-left: 2em;
-	}
 	.line {
 		display: none;
 	}

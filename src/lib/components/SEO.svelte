@@ -2,7 +2,6 @@
 	export let title: string = "Kennan Hunter";
 	export let description: string = "My personal blog";
 	export let imageURL: string = "";
-	export let technologies: string[] = [];
 	export let keywords: string[] = [];
 	export let author: string = "Kennan Hunter";
 </script>

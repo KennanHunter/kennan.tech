@@ -16,7 +16,7 @@
 
 <svelte:head><title>{title}</title></svelte:head>
 
-<Seo {title} {technologies} {description} keywords={technologies} />
+<Seo {title} {description} keywords={technologies} />
 <article>
 	<Center>
 		{#if image}
