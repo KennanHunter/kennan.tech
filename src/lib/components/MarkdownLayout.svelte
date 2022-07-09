@@ -54,6 +54,7 @@
 	ul {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 	h4 {
 		margin: 0;

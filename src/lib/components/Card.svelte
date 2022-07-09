@@ -37,8 +37,8 @@
 	}
 	.more {
 		position: absolute;
-		width: 30%;
-		left: 35%;
+		width: 100%;
+		left: 0;
 		top: 90%;
 		text-align: center;
 	}
