@@ -14,8 +14,8 @@
 		"package": "svelte-kit package",
 		"prepare": "svelte-kit sync && husky install",
 		"preview": "vite preview",
-		"test": "playwright test",
-		"spell": "cspell \"src/**/*\" \"./*\" --fail-fast true"
+		"spell": "cspell \"src/**/*\" \"./*\" --fail-fast true",
+		"test": "playwright test"
 	},
 	"dependencies": {
 		"@fontsource/fira-code": "^4.5.10",
