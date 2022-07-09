@@ -16,7 +16,23 @@ jobs:
               with:
                   node-version: "16.13.0"
 
-            - run: npm install
+            - name: Cache Dependencies
+              id: cache-dependencies
+              uses: actions/cache@v3
+              with:
+                  path: node_modules
+                  key: ${{hashFiles('package.json')}}-modules
+
+            - name: Cache Lock
+              id: cache-lock
+              uses: actions/cache@v3
+              with:
+                  path: package-lock.json
+                  key: ${{hashFiles('package.json')}}-lock
+
+            - name: install
+              if: steps.cache-dependencies.outputs.cache-hit != 'true'
+              run: npm install
 
             - run: npm run build
 
