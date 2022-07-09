@@ -5,6 +5,7 @@
 	import Tag from "$lib/components/Tag.svelte";
 	import "$lib/styles/syntax.scss";
 	import Image from "svelte-image";
+	import Copyright from "./Copyright.svelte";
 
 	export let title;
 	export let date;
@@ -35,6 +36,7 @@
 		{/if}
 		<div>
 			<slot />
+			<Copyright />
 		</div>
 		<Comments />
 	</Center>
