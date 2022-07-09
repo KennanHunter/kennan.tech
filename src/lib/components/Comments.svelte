@@ -4,6 +4,7 @@
 	import Line from "./Line.svelte";
 
 	let successful = true;
+	let fetchIteration = 0;
 
 	async function fetchGithub() {
 		return await fetch("https://api.github.com/api/")
@@ -13,14 +14,18 @@
 			.catch(() => {
 				successful = false;
 				setTimeout(async () => {
+					if (fetchIteration !== 9) fetchIteration++;
 					await fetchGithub();
-				}, 5000);
+				}, 5000 / Math.abs(fetchIteration - 10));
 			});
 	}
 	onMount(() => {
 		fetchGithub();
 	});
 </script>
+
+<!-- Used to jump down to comments -->
+<div id="comments" />
 
 {#if successful}
 	<Giscus
