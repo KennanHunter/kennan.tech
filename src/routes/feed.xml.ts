@@ -34,7 +34,7 @@ export async function get({}: RequestEvent): Promise<RequestHandlerOutput> {
 	<description>Kennan Hunter's Personal Blog</description>
 	<webmaster>kennanhunter5@gmail.com</webmaster>
 	<copyright>2022 kennan.tech CC-BY</copyright>
-	<language>English</language>
+	<language>en</language>
 	<link>${origin}</link>
 	<lastBuildDate>${lastPostPublishedAt}</lastBuildDate>
 	<pubDate>${lastPostPublishedAt}</pubDate>
