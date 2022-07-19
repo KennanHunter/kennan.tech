@@ -28,7 +28,7 @@
 <div id="comments" />
 
 {#if successful}
-	/* cSpell:disable */
+	<!-- cSpell:disable  -->
 	<Giscus
 		repo="kennanhunter/kennan.tech"
 		repoId="MDEwOlJlcG9zaXRvcnkzMjk3MzA0MDc="
