@@ -29,6 +29,7 @@
 		"unmaintainability",
 		"urlset",
 		"precomposed",
-		"rehype"
+		"rehype",
+		"themself" // Why tf is this not a word
 	]
 }

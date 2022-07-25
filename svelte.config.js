@@ -16,7 +16,6 @@ const config = {
 			layout: "./src/lib/components/MarkdownLayout.svelte",
 			rehypePlugins: [rehypeSlug],
 		}),
-		image(),
 	],
 
 	kit: {
