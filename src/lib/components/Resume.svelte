@@ -73,9 +73,7 @@
 			</li>
 			<li id="GraphQL" class="tech">GraphQL</li>
 			<li id="Rest" class="tech">Rest Apis</li>
-			<li id={encodeURIComponent("Dynamic Programming")} class="tech">
-				Dynamic Programming
-			</li>
+			<li id="Linux" class="tech">Linux</li>
 		</ul>
 		<h3>Accolades</h3>
 		<ul on:click={selectTech}>
