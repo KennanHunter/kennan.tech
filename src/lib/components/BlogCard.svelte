@@ -1,5 +1,4 @@
 <script>
-	import Image from "svelte-image";
 	import Tag from "./Tag.svelte";
 	export let title = "Untitled Post";
 	export let description;
@@ -15,7 +14,7 @@
 <a href={url}>
 	<article>
 		{#if image}
-			<Image width="100" src={image} />
+			<img width="100" src={image} alt={title + " Image"} />
 		{/if}
 		<h1>{title}</h1>
 		<p>
