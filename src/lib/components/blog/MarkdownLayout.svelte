@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Center from "$lib/components/Center.svelte";
-	import Comments from "$lib/components/Comments.svelte";
-	import Seo from "$lib/components/SEO.svelte";
-	import Tag from "$lib/components/Tag.svelte";
+	import Center from "$lib/components/common/Center.svelte";
+	import Comments from "$lib/components/blog/Comments.svelte";
+	import Seo from "$lib/components/meta/SEO.svelte";
+	import Tag from "$lib/components/blog/Tag.svelte";
 	import "$lib/styles/syntax.scss";
 	import Image from "svelte-image";
 	import Copyright from "./Copyright.svelte";
@@ -43,7 +43,7 @@
 </article>
 
 <style lang="scss">
-	@import "../styles/variables.scss";
+	@import "../../styles/variables.scss";
 	div {
 		max-width: 45em;
 		text-align: left;

@@ -5,7 +5,7 @@
 <div class="wrap">
 	<nav>
 		<a href="/"><h1>Kennan Hunter</h1></a>
-		<div>
+		<!-- <div>
 			<ul>
 				<a href="/resume/">
 					<li>Resume</li>
@@ -22,13 +22,13 @@
 					<li>Github</li>
 				</a>
 			</ul>
-		</div>
+		</div> -->
 	</nav>
 	<Line />
 </div>
 
 <style lang="scss">
-	@use "../styles/variables.scss";
+	@use "../../styles/variables.scss";
 	.wrap {
 		display: inline-block;
 		width: 100%;

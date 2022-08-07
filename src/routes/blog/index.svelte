@@ -17,9 +17,9 @@
 </script>
 
 <script>
-	import BlogCard from "$lib/components/BlogCard.svelte";
-	import Center from "$lib/components/Center.svelte";
-	import Seo from "$lib/components/SEO.svelte";
+	import BlogCard from "$lib/components/blog/BlogCard.svelte";
+	import Center from "$lib/components/common/Center.svelte";
+	import Seo from "$lib/components/meta/SEO.svelte";
 	export let posts;
 </script>
 

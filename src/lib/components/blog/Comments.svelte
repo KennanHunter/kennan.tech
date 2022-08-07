@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Giscus from "@giscus/svelte";
 	import { onMount } from "svelte";
-	import Line from "./Line.svelte";
+	import Line from "../common/Line.svelte";
 
 	let successful = true;
 	let fetchIteration = 0;
