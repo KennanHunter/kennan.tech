@@ -1,4 +1,9 @@
+<div align="center">
+![Logo](logo.svg)
+
 # kennan.tech
+
+</div>
 
 This is my personal website built with Svelte-Kit
 
