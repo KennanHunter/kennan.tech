@@ -9,7 +9,7 @@
 </div>
 
 <style lang="scss">
-	@use "../styles/variables.scss";
+	@use "../../styles/variables.scss";
 	a {
 		all: unset;
 		margin: 0 0.7em;

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from "$app/stores";
 	import { onMount } from "svelte";
-	import BlogCard from "./BlogCard.svelte";
-	import CenterVertically from "./CenterVertically.svelte";
-	import Line from "./Line.svelte";
+	import BlogCard from "../blog/BlogCard.svelte";
+	import CenterVertically from "../common/CenterVertically.svelte";
+	import Line from "../common/Line.svelte";
 
 	export let posts = [];
 
