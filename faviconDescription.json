@@ -4,8 +4,8 @@
 	"design": {
 		"ios": {
 			"pictureAspect": "backgroundAndMargin",
-			"backgroundColor": "#282828",
-			"margin": "25%",
+			"backgroundColor": "#121212",
+			"margin": "5%",
 			"assets": {
 				"ios6AndPriorIcons": false,
 				"ios7AndLaterIcons": false,
@@ -15,13 +15,13 @@
 		},
 		"desktopBrowser": {
 			"design": "background",
-			"backgroundColor": "#282828",
+			"backgroundColor": "#121212",
 			"backgroundRadius": 0.65,
-			"imageScale": 0.8
+			"imageScale": 0.95
 		},
 		"windows": {
 			"pictureAspect": "noChange",
-			"backgroundColor": "#282828",
+			"backgroundColor": "#121212",
 			"onConflict": "override",
 			"assets": {
 				"windows80Ie10Tile": false,
@@ -35,9 +35,9 @@
 		},
 		"androidChrome": {
 			"pictureAspect": "backgroundAndMargin",
-			"margin": "15%",
-			"backgroundColor": "#282828",
-			"themeColor": "#282828",
+			"margin": "5%",
+			"backgroundColor": "#121212",
+			"themeColor": "#121212",
 			"manifest": {
 				"display": "standalone",
 				"orientation": "notSet",
@@ -59,11 +59,11 @@
 		"scalingAlgorithm": "Mitchell",
 		"errorOnImageTooSmall": false,
 		"readmeFile": false,
-		"htmlCodeFile": true,
+		"htmlCodeFile": false,
 		"usePathAsIs": false
 	},
 	"versioning": {
 		"paramName": "v",
-		"paramValue": "2"
+		"paramValue": "3"
 	}
 }

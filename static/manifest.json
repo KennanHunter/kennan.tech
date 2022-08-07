@@ -1,20 +1,20 @@
 {
 	"name": "Kennan Hunter's Personal Website and Blog",
 	"short_name": "kennan.tech",
+	"start_url": "/",
 	"icons": [
 		{
-			"src": "android-chrome-192x192.png?v=2",
+			"src": "android-chrome-192x192.png?v=3",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "android-chrome-512x512.png?v=2",
+			"src": "android-chrome-512x512.png?v=3",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
 	],
-	"start_url": "/",
-	"theme_color": "#282828",
-	"background_color": "#282828",
+	"theme_color": "#121212",
+	"background_color": "#121212",
 	"display": "standalone"
 }
