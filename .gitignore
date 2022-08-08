@@ -6,3 +6,5 @@ yarn.lock
 .svelte-kit
 
 faviconData.json
+
+static/3d/*.blend1
