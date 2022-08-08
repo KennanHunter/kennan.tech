@@ -1,5 +1,5 @@
 <div align="center">
-![Logo](logo.svg)
+<img src="./static/favicon.svg" alt="logo" />
 
 # kennan.tech
 
