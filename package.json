@@ -8,6 +8,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"dev": "vite dev",
 		"dev:prod": "npx nodemon -w src --ext ts,svelte,html,json --exec \"yarn build && yarn preview\"",
+		"favicon": "real-favicon generate faviconDescription.json faviconData.json static",
 		"format": "format-package -w && prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"husky:prepare": "husky install",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
