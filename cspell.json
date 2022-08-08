@@ -30,6 +30,7 @@
 		"urlset",
 		"precomposed",
 		"rehype",
-		"themself" // Why tf is this not a word
+		"themself", // Why tf is this not a word
+		"rgba"
 	]
 }
