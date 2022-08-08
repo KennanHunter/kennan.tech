@@ -1,7 +1,7 @@
 <script>
 	import Line from "./Line.svelte";
 
-	export let id = "";
+	export const id = "";
 </script>
 
 <div>

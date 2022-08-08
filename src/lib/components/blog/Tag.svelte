@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<a href={"/resume/#" + encodeURIComponent(technology)}>
+	<a href={"/blog/#" + encodeURIComponent(technology)}>
 		{"#" + technology}
 	</a>
 </div>

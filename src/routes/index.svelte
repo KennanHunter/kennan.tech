@@ -25,7 +25,7 @@
 	import type { Post } from "$lib/functions/posts";
 	import Projects from "$lib/components/index/Projects.svelte";
 
-	export let posts: Post[];
+	// export let posts: Post[];
 </script>
 
 <Card />
