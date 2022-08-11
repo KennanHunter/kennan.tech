@@ -23,7 +23,7 @@ ${post.technologies
 		</item>`;
 }
 
-export async function get({}: RequestEvent): Promise<RequestHandlerOutput> {
+export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
 	const posts = await getAllPosts();
 
 	const lastPostPublishedAt = posts[0].publishedAt;

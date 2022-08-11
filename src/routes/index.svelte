@@ -21,9 +21,8 @@
 
 	import About from "$lib/components/index/About.svelte";
 	import Card from "$lib/components/index/Card.svelte";
-	import Skills from "$lib/components/index/Skills.svelte";
-	import type { Post } from "$lib/functions/posts";
 	import Projects from "$lib/components/index/Projects.svelte";
+	import Skills from "$lib/components/index/Skills.svelte";
 
 	// export let posts: Post[];
 </script>

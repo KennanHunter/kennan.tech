@@ -14,23 +14,25 @@
 		"fontsource",
 		"gamepad",
 		"giscus",
+		"GLTF",
 		"hardwaremap",
 		"kennanhunter",
 		"keyframes",
 		"mdsvex",
 		"mstile",
+		"precomposed",
 		"prerendered",
+		"rehype",
+		"rgba",
 		"robotcore",
 		"sveltejs",
 		"sveltekit",
 		"teamcode",
 		"teleop",
+		"themself",
 		"threejsm",
+		"tweened",
 		"unmaintainability",
-		"urlset",
-		"precomposed",
-		"rehype",
-		"themself", // Why tf is this not a word
-		"rgba"
+		"urlset"
 	]
 }

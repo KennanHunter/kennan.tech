@@ -1,7 +1,6 @@
 <script>
 	import Nav from "$lib/components/common/Nav.svelte";
 	import "$lib/styles/app.scss";
-	import "@fontsource/fira-code";
 </script>
 
 <Nav />

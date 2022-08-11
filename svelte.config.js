@@ -1,7 +1,6 @@
 import adapter from "@sveltejs/adapter-static";
 import { mdsvex } from "mdsvex";
 import rehypeSlug from "rehype-slug";
-import image from "svelte-image";
 import preprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -1,6 +1,6 @@
 import type { RequestEvent, RequestHandlerOutput } from "@sveltejs/kit";
 
-export async function get({}: RequestEvent): Promise<RequestHandlerOutput> {
+export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
 	return {
 		status: 200,
 		headers: {

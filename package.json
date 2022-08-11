@@ -14,24 +14,23 @@
 		"husky:prepare": "husky install",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"package": "svelte-kit package",
-		"prepare": "svelte-kit sync && husky install",
+		"prepare": "husky install",
 		"preview": "vite preview",
 		"spell": "cspell \"src/**/*\" \"./*\" --fail-fast true",
 		"test": "playwright test"
 	},
 	"dependencies": {
 		"@fontsource/fira-code": "^4.5.10",
-		"@giscus/svelte": "^2.0.6",
-		"mdsvex": "^0.10.5",
-		"three": "^0.142.0"
+		"three": "^0.143.0"
 	},
 	"devDependencies": {
+		"@giscus/svelte": "^2.0.6",
 		"@playwright/test": "^1.23.2",
 		"@prettier/plugin-xml": "^2.2.0",
-		"@sveltejs/adapter-auto": "1.0.0-next.55",
-		"@sveltejs/adapter-static": "^1.0.0-next.35",
-		"@sveltejs/kit": "1.0.0-next.367",
-		"@types/three": "^0.141.0",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "next",
+		"@sveltejs/kit": "next",
+		"@types/three": "^0.143.0",
 		"@typescript-eslint/eslint-plugin": "^5.30.5",
 		"@typescript-eslint/parser": "^5.30.5",
 		"cli-real-favicon": "^0.0.8",
@@ -41,6 +40,7 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"format-package": "^7.0.0",
 		"husky": "^8.0.1",
+		"mdsvex": "^0.10.5",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.5.0",
 		"rehype-autolink-headings": "^6.1.1",
@@ -49,10 +49,10 @@
 		"sass": "^1.50.0",
 		"svelte": "^3.49.0",
 		"svelte-check": "^2.2.6",
-		"svelte-image": "^0.2.9",
+		"svelte-cubed": "^0.2.1",
 		"svelte-preprocess": "^4.10.6",
 		"tslib": "^2.3.1",
 		"typescript": "~4.7.4",
-		"vite": "^2.9.14"
+		"vite": "^3.0.4"
 	}
 }

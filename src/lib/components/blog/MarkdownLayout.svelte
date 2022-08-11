@@ -4,7 +4,6 @@
 	import Seo from "$lib/components/meta/SEO.svelte";
 	import Tag from "$lib/components/blog/Tag.svelte";
 	import "$lib/styles/syntax.scss";
-	import Image from "svelte-image";
 	import Copyright from "./Copyright.svelte";
 
 	export let title;
@@ -20,7 +19,7 @@
 <article>
 	<Center>
 		{#if image}
-			<Image src={image} />
+			<img src={image} alt="Preview" />
 		{/if}
 		<h1>{title}</h1>
 		{#if date}
