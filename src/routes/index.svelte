@@ -18,16 +18,14 @@
 
 <script lang="ts">
 	import "$lib/styles/variables.scss";
+	import "@fontsource/fira-code";
 
 	import About from "$lib/components/index/About.svelte";
-	import Card from "$lib/components/index/Card.svelte";
 	import Projects from "$lib/components/index/Projects.svelte";
 	import Skills from "$lib/components/index/Skills.svelte";
 
 	// export let posts: Post[];
 </script>
-
-<Card />
 
 <About />
 <Skills />

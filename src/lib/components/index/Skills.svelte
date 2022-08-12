@@ -3,7 +3,7 @@
 	import SectionHeader from "../common/SectionHeader.svelte";
 </script>
 
-<SectionHeader>Skills</SectionHeader>
+<SectionHeader id="skills">Skills</SectionHeader>
 <Line />
 
 <section>
