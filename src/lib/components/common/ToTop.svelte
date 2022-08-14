@@ -1,4 +1,8 @@
-<a href="/#top">
+<script>
+	let scrollY;
+</script>
+
+<a href="#top" style={scrollY >= 400 ? "display: block" : "display: none"}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="40"
@@ -13,6 +17,8 @@
 		/>
 	</svg>
 </a>
+
+<svelte:window bind:scrollY />
 
 <style lang="scss">
 	@import "../../styles/variables.scss";
