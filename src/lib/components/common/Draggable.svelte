@@ -1,3 +1,4 @@
+<!-- cspell:disable -->
 <script>
 	let pos1 = 0,
 		pos2 = 0,
