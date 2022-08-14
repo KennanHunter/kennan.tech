@@ -26,6 +26,7 @@
 		background-color: $bg2;
 		padding: 1em 2em;
 		box-shadow: 0 50vh 0 50vh $bg2;
+		margin-top: 2em;
 		overflow: hidden;
 	}
 	ul {
