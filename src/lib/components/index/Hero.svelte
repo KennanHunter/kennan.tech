@@ -9,4 +9,7 @@
 	section {
 		min-height: 40%;
 	}
+	h1 {
+		text-align: center;
+	}
 </style>
