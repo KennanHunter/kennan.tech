@@ -1,10 +1,13 @@
 {
 	"version": "0.2",
 	"language": "en",
-	"enableFiletypes": ["svelte"],
+	"enableFiletypes": [
+		"svelte"
+	],
 	"words": [
 		"apos",
 		"atrule",
+		"blazingly",
 		"browserconfig",
 		"Compsci",
 		"concat",
