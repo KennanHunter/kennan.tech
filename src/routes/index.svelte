@@ -23,8 +23,7 @@
 	import Projects from "$lib/components/index/Projects.svelte";
 	import Skills from "$lib/components/index/Skills.svelte";
 	import Hero from "$lib/components/index/Hero.svelte";
-
-	// export let posts: Post[];
+	// import Contact from "$lib/components/index/Contact.svelte";
 </script>
 
 <Hero />
@@ -33,3 +32,5 @@
 <Skills />
 
 <Projects />
+
+<!-- <Contact /> -->
