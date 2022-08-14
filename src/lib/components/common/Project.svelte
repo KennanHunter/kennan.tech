@@ -9,10 +9,15 @@
 	export let description: string;
 	export let links: Link[];
 	export let reverse: boolean = false;
+	let innerWidth;
+	let order;
+	$: order = (reverse && innerWidth > 800) || innerWidth < 800;
 </script>
 
+<svelte:window bind:innerWidth />
+
 <div class="grid">
-	<div style={reverse ? "grid-column-start: 2" : "grid-column-start: 1"}>
+	<div>
 		<h1>{title}</h1>
 		<div class="description">{description}</div>
 
@@ -22,10 +27,7 @@
 			{/each}
 		</div>
 	</div>
-	<div
-		class="slot"
-		style={reverse ? "grid-column-start: 1" : "grid-column-start: 2"}
-	>
+	<div class="slot" style={order ? "order: -2" : ""}>
 		<Center>
 			<slot />
 		</Center>
@@ -36,8 +38,7 @@
 	@import "../../styles/variables.scss";
 	@import "../../styles/hover.scss";
 	.grid {
-		display: grid;
-		grid-template-columns: 50% auto;
+		display: flex;
 		padding: 1em;
 		margin: 1em;
 		border: $text solid 0.1em;
@@ -57,6 +58,17 @@
 		}
 	}
 	.slot {
-		grid-row-start: 1;
+		min-width: 50%;
+		width: fit-content;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.grid {
+			flex-direction: column;
+			.slot {
+				width: 100%;
+				order: -2;
+			}
+		}
 	}
 </style>

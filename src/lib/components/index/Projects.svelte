@@ -45,11 +45,21 @@
 		]}
 		reverse="true"
 	>
-		<img
-			src="/assets/index/RedPandaLMSLogo.svg"
-			alt="test"
-			style="height: 15em"
-		/>
+		<figure style="margin: 0">
+			<img
+				src="/assets/index/RedPandaLMSLogo.svg"
+				alt="test"
+				style="height: 15em"
+			/>
+			<figcaption>
+				<a
+					href="https://b1ue-phoenix.github.io/"
+					style="font-size: 0.8em;"
+					class="sweep"
+					>Logo credit to Lee, my amazing Graphic Designer teammate</a
+				>
+			</figcaption>
+		</figure>
 	</Project>
 
 	<Project
@@ -67,7 +77,6 @@
 				href: "/blog/e/url-shortener-cloudflare",
 			},
 		]}
-		switchOnSmall="true"
 	>
 		<img
 			src="/assets/index/CloudflareWorkersLogo.png"
@@ -76,3 +85,18 @@
 		/>
 	</Project>
 </section>
+
+<style lang="scss">
+	@use "../../styles/hover.scss";
+
+	.sweep {
+		text-decoration: none;
+		padding: 0.1em;
+	}
+
+	@media only screen and (max-width: 800px) {
+		.sweep {
+			margin-bottom: 1em;
+		}
+	}
+</style>

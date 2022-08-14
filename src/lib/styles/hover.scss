@@ -1,3 +1,5 @@
+@use "./variables.scss";
+
 /* Sweep To Right */
 .sweep {
 	display: inline-block;
@@ -19,7 +21,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #2098d1;
+	background: variables.$blue;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 0 50%;
@@ -34,7 +36,7 @@
 .sweep:hover,
 .sweep:focus,
 .sweep:active {
-	color: white;
+	color: variables.$text;
 }
 .sweep:hover:before,
 .sweep:focus:before,

@@ -151,6 +151,9 @@
 		display: flex;
 		justify-content: space-around;
 	}
+	span {
+		font-size: 1.2em;
+	}
 	ul {
 		list-style: none;
 		padding: 0;
@@ -163,5 +166,10 @@
 	}
 	section {
 		min-height: 40%;
+	}
+	@media only screen and (max-width: 800px) {
+		.Sections {
+			flex-direction: column;
+		}
 	}
 </style>
