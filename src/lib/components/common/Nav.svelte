@@ -3,7 +3,7 @@
 </script>
 
 <div class="wrap">
-	<nav>
+	<nav id="top">
 		<a href="/" class="inline">
 			<Logo />
 		</a>

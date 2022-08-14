@@ -5,11 +5,14 @@
 </script>
 
 <div>
-	<h1 {id}><slot /></h1>
+	<h1 {id}><a href={"/#" + id}><slot /></a></h1>
 	<Line />
 </div>
 
 <style>
+	a {
+		all: unset;
+	}
 	h1 {
 		text-align: center;
 	}

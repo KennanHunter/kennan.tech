@@ -1,7 +1,9 @@
 {
 	"version": "0.2",
 	"language": "en",
-	"enableFiletypes": ["svelte"],
+	"enableFiletypes": [
+		"svelte"
+	],
 	"words": [
 		"apos",
 		"atrule",
@@ -9,6 +11,7 @@
 		"browserconfig",
 		"Compsci",
 		"concat",
+		"evenodd",
 		"feedforward",
 		"fira",
 		"firstinspires",
