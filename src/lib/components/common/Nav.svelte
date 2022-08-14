@@ -8,10 +8,12 @@
 			<Logo />
 		</a>
 		<div class="flex inline">
-			<a href="/#about">About</a>
-			<a href="/#skills">Skills</a>
-			<a href="/#projects">Projects</a>
-			<a href="/#contact" style="padding-right: 2em">Contact Me</a>
+			<a href="/#about" class="hideWhenSmall">About</a>
+			<a href="/#skills" class="hideWhenSmall">Skills</a>
+			<a href="/#projects" class="hideWhenSmall">Projects</a>
+			<a href="/#contact" style="padding-right: 2em" class="hideWhenSmall"
+				>Contact Me</a
+			>
 			<a href="/blog/">Blog</a>
 		</div>
 	</nav>
@@ -19,26 +21,46 @@
 
 <style lang="scss">
 	@use "../../styles/variables.scss";
-	nav {
-		margin: 0.3em;
-		display: flex;
-	}
 	.wrap {
 		box-shadow: 0px 0.6em 0.6em rgba(0, 0, 0, 0.5);
 	}
-	.flex {
-		a {
-			flex-grow: 1;
-			text-decoration: none;
-			color: variables.$text;
-			font-size: large;
+	@media only screen and (max-width: 800px) {
+		nav {
+			display: flex;
 			align-items: center;
-			text-align: center;
-			padding: 1.3em 0;
-			margin: auto;
+			justify-content: space-between;
+			div {
+				a {
+					text-decoration: none;
+					color: variables.$text;
+					font-size: large;
+					padding: 2em;
+				}
+			}
 		}
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
+		.hideWhenSmall {
+			display: none;
+		}
+	}
+	@media (min-width: 800px) {
+		nav {
+			margin: 0.3em;
+			display: flex;
+		}
+		.flex {
+			a {
+				flex-grow: 1;
+				text-decoration: none;
+				color: variables.$text;
+				font-size: large;
+				align-items: center;
+				text-align: center;
+				padding: 1.3em 0;
+				margin: auto;
+			}
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
 	}
 </style>

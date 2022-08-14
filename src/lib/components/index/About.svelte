@@ -24,4 +24,9 @@
 	p {
 		margin: 2em 5em;
 	}
+	@media only screen and (max-width: 800px) {
+		p {
+			margin: 2em 0.5em;
+		}
+	}
 </style>
