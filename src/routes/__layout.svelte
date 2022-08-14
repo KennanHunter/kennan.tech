@@ -1,4 +1,5 @@
 <script>
+	import Footer from "$lib/components/common/Footer.svelte";
 	import Nav from "$lib/components/common/Nav.svelte";
 	import "$lib/styles/app.scss";
 	import "@fontsource/fira-code";
@@ -6,12 +7,14 @@
 
 <Nav />
 
-<div>
+<main>
 	<slot />
-</div>
+</main>
+
+<Footer />
 
 <style>
-	div {
+	main {
 		margin: 0 1em;
 		height: 100%;
 	}

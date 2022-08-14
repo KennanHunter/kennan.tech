@@ -18,7 +18,7 @@
 
 		<div class="links">
 			{#each links as link}
-				<a class="sweep-to-right" href={link.href}>{link.text}</a>
+				<a class="sweep" href={link.href}>{link.text}</a>
 			{/each}
 		</div>
 	</div>

@@ -2,11 +2,13 @@
 	import SectionHeader from "../common/SectionHeader.svelte";
 </script>
 
-<SectionHeader id="about">About</SectionHeader>
+<section>
+	<SectionHeader id="about">About</SectionHeader>
 
-<div class="wrap">
-	<p>Hi</p>
-</div>
+	<div class="wrap">
+		<p>Hi</p>
+	</div>
+</section>
 
 <style>
 	.wrap {

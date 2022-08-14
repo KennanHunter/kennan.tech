@@ -1,12 +1,10 @@
 <script lang="ts">
-	import Line from "../common/Line.svelte";
 	import SectionHeader from "../common/SectionHeader.svelte";
 </script>
 
-<SectionHeader id="skills">Skills</SectionHeader>
-<Line />
-
 <section>
+	<SectionHeader id="skills">Skills</SectionHeader>
+
 	<div>a</div>
 	<div>b</div>
 </section>

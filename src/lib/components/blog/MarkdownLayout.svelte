@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Center from "$lib/components/common/Center.svelte";
 	import Comments from "$lib/components/blog/Comments.svelte";
-	import Seo from "$lib/components/meta/SEO.svelte";
 	import Tag from "$lib/components/blog/Tag.svelte";
+	import Center from "$lib/components/common/Center.svelte";
+	import Seo from "$lib/components/meta/SEO.svelte";
 	import "$lib/styles/syntax.scss";
-	import Copyright from "./Copyright.svelte";
+	import Line from "../common/Line.svelte";
 
 	export let title;
 	export let date;
@@ -35,7 +35,6 @@
 		{/if}
 		<div>
 			<slot />
-			<Copyright />
 		</div>
 		<Comments />
 	</Center>

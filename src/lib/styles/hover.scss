@@ -1,5 +1,5 @@
 /* Sweep To Right */
-.sweep-to-right {
+.sweep {
 	display: inline-block;
 	vertical-align: middle;
 	-webkit-transform: perspective(1px) translateZ(0);
@@ -11,7 +11,7 @@
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-.sweep-to-right:before {
+.sweep:before {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -31,14 +31,14 @@
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
-.sweep-to-right:hover,
-.sweep-to-right:focus,
-.sweep-to-right:active {
+.sweep:hover,
+.sweep:focus,
+.sweep:active {
 	color: white;
 }
-.sweep-to-right:hover:before,
-.sweep-to-right:focus:before,
-.sweep-to-right:active:before {
+.sweep:hover:before,
+.sweep:focus:before,
+.sweep:active:before {
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
 }

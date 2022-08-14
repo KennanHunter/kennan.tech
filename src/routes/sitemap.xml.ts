@@ -1,5 +1,23 @@
 import type { RequestEvent, RequestHandlerOutput } from "@sveltejs/kit";
 
+export function globImport() {
+	let arr = [];
+	for (let path in import.meta.glob("./**/*.(svelte|md)")) {
+		arr.push(
+			path
+				.replace(/\.(svelte|md)/, "")
+				.replace("index", "")
+				.split("@")[0]
+				.split(".")[1]
+		);
+	}
+	arr = arr
+		.filter((val: string) => {
+			return !val.includes("__");
+		})
+		.map((path) => "https://kennan.tech" + path);
+	return arr;
+}
 export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
 	return {
 		status: 200,
@@ -10,23 +28,11 @@ export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
 		body: `<?xml version="1.0" encoding="UTF-8"?>
 			   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 		${(() => {
-			let arr = [];
-			for (let path in import.meta.glob("./**/*.(svelte|md)")) {
-				arr.push(
-					path
-						.replace(/\.(svelte|md)/, "")
-						.split("@")[0]
-						.split(".")[1]
-				);
-			}
-			arr = arr.filter((val: string) => {
-				return !val.includes("__");
-			});
-			return arr
+			return globImport()
 				.map((path) => {
 					return `<url>
 						<loc>
-					${("https://kennan.tech" + path).replace(/[<>&'"]/g, (c) => {
+					${path.replace(/[<>&'"]/g, (c) => {
 						switch (c) {
 							case "<":
 								return "&lt;";
