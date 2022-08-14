@@ -11,7 +11,7 @@
 		description="Photo is a simple and fast graphql image
 		processing server that shifts heavy loads off of your
 		users device. Written in memory-safe Rust its speedy and 
-		demands nothing from your server"
+		demands nothing from your server."
 		links={[
 			{
 				text: "GitHub",
