@@ -14,7 +14,7 @@
 			<a href="/#contact" style="padding-right: 2em" class="hideWhenSmall"
 				>Contact Me</a
 			>
-			<a href="/blog/">Blog</a>
+			<a href="/blog">Blog</a>
 		</div>
 	</nav>
 </div>
