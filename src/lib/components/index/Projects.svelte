@@ -56,7 +56,7 @@
 		title="Link Shortener"
 		description="A simple link shortener I built 
 		for my subdomain a.kennan.tech. It uses CloudFlare Workers
-		and KV to deliver redirect responses at blazingly fast speeds"
+		and KV to deliver redirect responses at blazingly fast speeds."
 		links={[
 			{
 				text: "GitHub",
