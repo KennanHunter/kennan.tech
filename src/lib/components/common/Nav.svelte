@@ -11,8 +11,8 @@
 			<a href="/#about">About</a>
 			<a href="/#skills">Skills</a>
 			<a href="/#projects">Projects</a>
-			<a href="/blog/">Blog</a>
 			<a href="/#contact" style="padding-right: 2em">Contact Me</a>
+			<a href="/blog/">Blog</a>
 		</div>
 	</nav>
 </div>
