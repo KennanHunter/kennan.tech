@@ -10,16 +10,22 @@
 			Hi, my name is Kennan Hunter and I'm a passionate self taught
 			developer from Bloomington Indiana. I mostly work on Full Stack Web
 			Development. I'm very big into robotics, having competed in First
-			Tech Challenge for 4 years.
+			Tech Challenge for 4 years. I've written on various programming
+			topics at my <a href="/blog" class="sweep">Blog</a>.
 		</p>
 	</div>
 </section>
 
-<style>
+<style lang="scss">
+	@import "../../styles/hover.scss";
 	.wrap {
 		display: grid;
 		grid-template-columns: auto auto;
 		min-height: 40%;
+	}
+	.sweep {
+		padding: 0.1em;
+		text-decoration: none;
 	}
 	p {
 		margin: 2em 5em;
