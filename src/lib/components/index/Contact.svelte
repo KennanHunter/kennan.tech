@@ -1,35 +1,35 @@
 <script lang="ts">
-	import SectionHeader from "../common/SectionHeader.svelte";
 	import Center from "../common/Center.svelte";
+	import SectionHeader from "../common/SectionHeader.svelte";
 
 	const contactEndpoint =
 		"https://portfolio-contact.azurewebsites.net/api/portfolio-discord";
+	const contactStorage = "contactStorage";
 
-	let name: string, contact: string, message: string;
+	let data = {
+		name: "",
+		contact: "",
+		message: "",
+	};
+
 	let status: string = "";
 	let timedOut: boolean = false;
-	let cantAccess: boolean = false;
+	let networkError: boolean = false;
 
-	$: {
-		if (cantAccess) {
+	const updateStatus = () => {
+		if (networkError) {
 			status = "Network Error";
 		} else if (timedOut) {
 			status = "Please slow down";
 		}
-	}
+	};
 
 	const submit = () => {
+		updateStatus();
+
 		if (timedOut) {
 			return;
 		}
-
-		const data = {
-			name: name,
-			contact: contact,
-			message: message,
-		};
-
-		console.log(JSON.stringify(data));
 
 		timedOut = true;
 
@@ -38,13 +38,20 @@
 			body: JSON.stringify(data),
 		})
 			.then(() => {
+				// Normalize Data
+				data = {
+					name: "",
+					contact: "",
+					message: "",
+				};
+
 				setTimeout(() => {
 					timedOut = false;
 				}, 5000);
 			})
 			.catch(() => {
 				timedOut = false;
-				cantAccess = true;
+				networkError = true;
 			});
 	};
 </script>
@@ -66,7 +73,7 @@
 							type="text"
 							name="name"
 							id="name"
-							bind:value={name}
+							bind:value={data.name}
 						/>
 
 						<label for="name">Contact</label>
@@ -74,7 +81,7 @@
 							type="text"
 							name="contact"
 							id="contact"
-							bind:value={contact}
+							bind:value={data.contact}
 						/>
 						<br />
 					</div>
@@ -97,7 +104,7 @@
 						type="text"
 						name="message"
 						id="message"
-						bind:value={message}
+						bind:value={data.message}
 					/>
 					<input
 						type="submit"
