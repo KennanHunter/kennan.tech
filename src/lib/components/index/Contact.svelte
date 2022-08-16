@@ -6,7 +6,23 @@
 		"https://portfolio-contact.azurewebsites.net/api/portfolio-discord";
 
 	let name: string, contact: string, message: string;
+	let status: string = "";
+	let timedOut: boolean = false;
+	let cantAccess: boolean = false;
+
+	$: {
+		if (cantAccess) {
+			status = "Network Error";
+		} else if (timedOut) {
+			status = "Please slow down";
+		}
+	}
+
 	const submit = () => {
+		if (timedOut) {
+			return;
+		}
+
 		const data = {
 			name: name,
 			contact: contact,
@@ -15,10 +31,21 @@
 
 		console.log(JSON.stringify(data));
 
+		timedOut = true;
+
 		fetch(contactEndpoint, {
 			method: "POST",
 			body: JSON.stringify(data),
-		});
+		})
+			.then(() => {
+				setTimeout(() => {
+					timedOut = false;
+				}, 5000);
+			})
+			.catch(() => {
+				timedOut = false;
+				cantAccess = true;
+			});
 	};
 </script>
 
@@ -60,6 +87,8 @@
 						class="shown"
 						on:click={submit}
 					/>
+
+					<h4 style="color: red;">{status}</h4>
 				</div>
 				<div>
 					<label for="message">Message </label>
