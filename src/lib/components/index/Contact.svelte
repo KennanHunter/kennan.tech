@@ -2,6 +2,9 @@
 	import SectionHeader from "../common/SectionHeader.svelte";
 	import Center from "../common/Center.svelte";
 
+	const contactEndpoint =
+		"https://portfolio-contact.azurewebsites.net/api/portfolio-discord";
+
 	let name: string, contact: string, message: string;
 	const submit = () => {
 		const data = {
@@ -11,6 +14,11 @@
 		};
 
 		console.log(JSON.stringify(data));
+
+		fetch(contactEndpoint, {
+			method: "POST",
+			body: JSON.stringify(data),
+		});
 	};
 </script>
 
@@ -123,10 +131,11 @@
 		border-radius: 0.5em;
 		transition: background-color 0.4s ease-in-out;
 		margin-top: 1em;
-	}
 
-	input[type="submit"]:hover {
-		background-color: $green;
+		&:hover,
+		&:focus {
+			background-color: $green;
+		}
 	}
 
 	#message {
