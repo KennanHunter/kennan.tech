@@ -9,11 +9,18 @@
 	<Line />
 </div>
 
-<style>
+<style lang="scss">
+	@import "../../styles/variables.scss";
+
 	a {
 		all: unset;
 	}
 	h1 {
 		text-align: center;
+	}
+	h1 :focus-within {
+		border: 0.1em solid $blue;
+		border-radius: 0.1em;
+		padding: 0.1em;
 	}
 </style>
