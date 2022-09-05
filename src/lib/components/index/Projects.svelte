@@ -53,7 +53,7 @@
 			/>
 			<figcaption>
 				<a
-					href="https://b1ue-phoenix.github.io/"
+					href="https://github.com/HarperGLee"
 					style="font-size: 0.8em;"
 					class="sweep"
 					>Logo credit to Lee, my amazing Graphic Designer teammate</a
@@ -65,7 +65,7 @@
 	<Project
 		title="Link Shortener"
 		description="A simple link shortener I built 
-		for my subdomain a.kennan.tech. It uses CloudFlare Workers
+		for my subdomain a.kennan.tech. It uses Cloudflare Workers
 		and KV to deliver redirect responses at blazingly fast speeds."
 		links={[
 			{
