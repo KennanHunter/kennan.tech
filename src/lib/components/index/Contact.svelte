@@ -200,7 +200,6 @@
 			padding: 1em;
 			gap: 1em;
 			margin: 1em;
-			width: min(20em, 90%);
 		}
 	}
 </style>
