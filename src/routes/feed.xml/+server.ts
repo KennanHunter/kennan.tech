@@ -1,11 +1,12 @@
 import { getAllPosts, type Post } from "$lib/functions/posts";
-import type { RequestEvent, RequestHandlerOutput } from "@sveltejs/kit";
+import type { RequestEvent } from "@sveltejs/kit";
 
+export const prerender = true;
 const origin = "https://kennan.tech";
 
 function postToXml(post: Post): string {
 	const absoluteUrl = origin + post.url;
-	return `\
+	return `
 		<item>
 			<title>${post.title}</title>
 			<description>${post.description ? post.description : ""}</description>
@@ -16,14 +17,12 @@ function postToXml(post: Post): string {
 			<pubDate>${post.publishedAt}</pubDate>
 			<author>kennanhunter5@gmail.com</author>
 ${post.technologies
-	.map((tech) => {
-		return `\t\t\t<category>${tech}</category>`;
-	})
+	.map((tech) => `\t\t\t<category>${tech}</category>`)
 	.join("\n")}
 		</item>`;
 }
 
-export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
+export async function GET({}: RequestEvent): Promise<Response> {
 	const posts = await getAllPosts();
 
 	const lastPostPublishedAt = posts[0].publishedAt;
@@ -46,12 +45,11 @@ ${posts
 	.join("\n")}
 	</channel>
 </rss>`;
-	return {
-		status: 200,
+
+	return new Response(xmlString, {
 		headers: {
 			"access-control-allow-origin": "*",
 			"Content-Type": "text/xml",
 		},
-		body: xmlString,
-	};
+	});
 }

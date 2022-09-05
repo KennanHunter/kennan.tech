@@ -1,26 +1,8 @@
-<script context="module">
-	/** @type {import('./blog/index.svelte').Load} */
-	export async function load({ fetch }) {
-		let postsRequest;
-		await fetch("/blog/posts.json")
-			.then((response) => response.json())
-			.then((data) => {
-				postsRequest = data;
-			});
-
-		return {
-			props: {
-				posts: postsRequest,
-			},
-		};
-	}
-</script>
-
 <script>
 	import BlogCard from "$lib/components/blog/BlogCard.svelte";
 	import Center from "$lib/components/common/Center.svelte";
 	import Seo from "$lib/components/meta/SEO.svelte";
-	export let posts;
+	export let data;
 </script>
 
 <Seo title="Blog" description="Kennan Hunter's Tech Blog" keywords={["Blog"]} />
@@ -32,7 +14,7 @@
 	</p>
 
 	<h2>Posts</h2>
-	{#each posts as post}
+	{#each data.posts as post}
 		<BlogCard {...post} />
 	{/each}
 </Center>

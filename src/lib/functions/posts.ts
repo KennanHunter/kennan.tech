@@ -13,11 +13,11 @@ export async function getAllPosts() {
 
 	for (const path in posts) {
 		body.push(
-			posts[path]().then(({ metadata }) => {
-				const splitPath = path.split(/\.|\//);
+			posts[path]().then(({ metadata }: any) => {
+				const splitPath = path.split(/\.|\//g);
 				return {
 					...metadata,
-					url: "/blog/e/" + splitPath[splitPath.length - 2],
+					url: "/blog/e/" + splitPath[splitPath.length - 3],
 				} as Post;
 			})
 		);

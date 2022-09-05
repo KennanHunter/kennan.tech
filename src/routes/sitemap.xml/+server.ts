@@ -1,4 +1,6 @@
-import type { RequestEvent, RequestHandlerOutput } from "@sveltejs/kit";
+import type { RequestEvent } from "@sveltejs/kit";
+
+export const prerender = true;
 
 export function globImport() {
 	let arr = [];
@@ -18,14 +20,10 @@ export function globImport() {
 		.map((path) => "https://kennan.tech" + path);
 	return arr;
 }
-export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
-	return {
-		status: 200,
-		headers: {
-			"access-control-allow-origin": "*",
-			"Content-Type": "text/xml",
-		},
-		body: `<?xml version="1.0" encoding="UTF-8"?>
+
+export async function GET({}: RequestEvent): Promise<Response> {
+	return new Response(
+		`<?xml version="1.0" encoding="UTF-8"?>
 			   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 		${(() => {
 			return globImport()
@@ -45,13 +43,18 @@ export async function GET({}: RequestEvent): Promise<RequestHandlerOutput> {
 							case '"':
 								return "&quot;";
 						}
-					})}</loc>
-				</url>`;
+					})}</loc></url>`;
 				})
 				.join("");
 		})()}
 		</urlset>`
 			.replace(/>\s*/g, ">")
 			.replace(/\s*</g, "<"),
-	};
+		{
+			headers: {
+				"access-control-allow-origin": "*",
+				"Content-Type": "text/xml",
+			},
+		}
+	);
 }
