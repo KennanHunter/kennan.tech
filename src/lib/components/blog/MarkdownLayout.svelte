@@ -4,7 +4,6 @@
 	import Center from "$lib/components/common/Center.svelte";
 	import Seo from "$lib/components/meta/SEO.svelte";
 	import "$lib/styles/syntax.scss";
-	import Line from "../common/Line.svelte";
 
 	export let title;
 	export let date;
@@ -15,7 +14,25 @@
 
 <svelte:head><title>{title}</title></svelte:head>
 
-<Seo {title} {description} keywords={technologies} />
+<Seo
+	{title}
+	{description}
+	keywords={technologies}
+	ldJSON={{
+		"@type": "NewsArticle",
+		headline: title,
+		image: [image || ""],
+		datePublished: date,
+		author: [
+			{
+				"@type": "Person",
+				name: "Kennan Hunter",
+				url: "https://kennan.tech/",
+			},
+		],
+	}}
+/>
+
 <article>
 	<Center>
 		{#if image}
