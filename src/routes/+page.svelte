@@ -22,11 +22,20 @@
 	}}
 />
 
-<Hero />
+<main>
+	<Hero />
 
-<About />
-<Skills />
+	<About />
+	<Skills />
 
-<Projects />
+	<Projects />
 
-<Contact />
+	<Contact />
+</main>
+
+<style>
+	main {
+		max-width: 60em;
+		margin: 0 auto;
+	}
+</style>
