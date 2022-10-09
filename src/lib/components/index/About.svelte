@@ -9,9 +9,8 @@
 		<p>
 			Hi, my name is Kennan Hunter and I'm a passionate self taught
 			developer living in Bloomington Indiana. I mostly work on Full Stack
-			Web Development. I'm very big into robotics, having competed in
-			First Tech Challenge for 4 years. I've written on various
-			programming topics at my <a href="/blog" class="sweep">Blog</a>.
+			Web Development. I've written on various programming topics at my
+			<a href="/blog" class="sweep">Blog</a>.
 		</p>
 	</div>
 </section>
