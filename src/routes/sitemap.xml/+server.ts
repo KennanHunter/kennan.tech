@@ -4,21 +4,19 @@ export const prerender = true;
 
 export function globImport() {
 	let arr = [];
-	for (let path in import.meta.glob("./**/*.(svelte|md)")) {
+
+	for (let path in import.meta.glob("../**/*.(svelte|md)")) {
 		arr.push(
 			path
-				.replace(/\.(svelte|md)/, "")
-				.replace("index", "")
-				.split("@")[0]
-				.split(".")[1]
+				.replace(/\.(svelte|md|ts)/, "")
+				.replace(/\+page/, "")
+				.split(".")[2]
 		);
 	}
-	arr = arr
-		.filter((val: string) => {
-			return !val.includes("__");
-		})
+
+	return arr
+		.filter((val: string) => !val.includes("+layout"))
 		.map((path) => "https://kennan.tech" + path);
-	return arr;
 }
 
 export async function GET({}: RequestEvent): Promise<Response> {
