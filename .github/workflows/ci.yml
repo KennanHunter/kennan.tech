@@ -16,28 +16,35 @@ jobs:
               with:
                   node-version: "16.13.0"
 
+            - name: Setup Pages
+              uses: actions/configure-pages@v2
+
             - name: Cache Dependencies
               id: cache-dependencies
               uses: actions/cache@v3
               with:
                   path: node_modules
-                  key: ${{hashFiles('package.json')}}-modules
+                  key: ${{hashFiles('yarn.lock')}}-modules
 
             - name: Cache Lock
               id: cache-lock
               uses: actions/cache@v3
               with:
                   path: package-lock.json
-                  key: ${{hashFiles('package.json')}}-lock
+                  key: ${{hashFiles('yarn.lock')}}-lock
 
             - name: install
               if: steps.cache-dependencies.outputs.cache-hit != 'true'
-              run: npm install
+              run: yarn install --immutable --immutable-cache --check-cache
 
-            - run: npm run build
+            - run: yarn build
 
-            - uses: JamesIves/github-pages-deploy-action@4.1.8
+            - name: Upload build artifact
+              uses: actions/upload-pages-artifact@v1
               with:
-                  branch: gh-pages
-                  folder: build
-                  single-commit: true
+                  # Upload build directory
+                  path: "./build"
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
