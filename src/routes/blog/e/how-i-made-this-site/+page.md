@@ -1,5 +1,6 @@
 ---
 title: How I made this site
+description: Learn the technologies I used to create kennan.tech, my personal portfolio.
 image:
 technologies:
     - Svelte
