@@ -31,7 +31,7 @@
 		description="Red Panda was a Learning Management 
 		Solution I built for the 2021-2022 TSA Software
 		Development Competition. With my team we won
-		first place for Rhode Island, Massachusets, and
+		first place for Rhode Island, Massachusetts, and
 		Connecticut."
 		links={[
 			{
