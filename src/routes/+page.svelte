@@ -28,9 +28,9 @@
 	<About />
 	<Skills />
 
-	<Projects />
+	<!-- <Projects /> -->
 
-	<Contact />
+	<!-- <Contact /> -->
 </main>
 
 <style>
